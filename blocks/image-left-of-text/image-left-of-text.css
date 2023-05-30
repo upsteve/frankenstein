@@ -1,0 +1,20 @@
+.image-left-of-text > div {
+    display: flex;
+    width: 100%;
+}
+
+.image-left-of-text div {
+  color: red;
+}
+
+.image-left-of-text div {
+    width: fit-content;
+}
+
+.image-left-of-text.narrow .the-left {
+  width: 70%;
+}
+
+.image-left-of-text.narrow .the-right {
+  width: 30%;
+}

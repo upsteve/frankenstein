@@ -13,6 +13,8 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
+import buildImageTextBlock from './image-text-block.js'
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
@@ -37,6 +39,7 @@ function buildHeroBlock(main) {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildImageTextBlock(main)
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

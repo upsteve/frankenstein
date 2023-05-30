@@ -273,3 +273,12 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+
+/* MY CUSTOMISATIONS */
+.nav-brand {
+  direction: rtl;
+  text-shadow: 0 0 3px aqua;
+  text-transform: uppercase;
+  text-decoration: underline dashed purple;
+}

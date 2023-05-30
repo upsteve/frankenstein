@@ -1,0 +1,8 @@
+.alt-img-text {
+    color: blue;
+}
+
+.alt-img-text > div {
+    display: flex;
+    width: 100%;
+}
