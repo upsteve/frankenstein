@@ -8,10 +8,10 @@ indices:
     properties:
       title:
         select: h1
-        value: words(0,2)
+        value: words(textContent(el), 0, 2)
       aNumber:
         select: h1
-        value: match(el, "(\d+)")
+        value: match(el, "(\\d+)")
   default:
     include:
       - /**
