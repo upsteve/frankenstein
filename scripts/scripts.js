@@ -14,6 +14,7 @@ import {
 } from './lib-franklin.js';
 
 import buildImageTextBlock from './image-text-block.js'
+import postForm from './post-form.js'
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -39,7 +40,9 @@ function buildHeroBlock(main) {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    // SS customisations
     buildImageTextBlock(main)
+    window['postForm'] = postForm
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
