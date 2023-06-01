@@ -1,4 +1,4 @@
 /* below the fold CSS goes here */
-.columns .support > div {
+.columns.support > div {
     flex-direction: start;
 }
