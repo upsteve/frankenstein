@@ -14,3 +14,7 @@
 .columns.support h3 {
     margin-top: 0;
 }
+
+.columns.support ul {
+    column-count: 2;
+}
