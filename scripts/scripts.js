@@ -33,14 +33,27 @@ function buildHeroBlock(main) {
   }
 }
 
-function buildBreadcrumbTitle(/** @type {HTMLElement} */ main) {
+function wrapElements(className, content) {
+  const elements = Array.isArray(content) ? content : [content]
+  const wrapper = document.createElement('div');
+  wrapper.className = className
+  elements.forEach(element => wrapper.append(element))
+  return wrapper
+}
+
+function buildBreadcrumbTitle(/** @type {Element} */ main) {
   const icon = main.querySelector('div p span.icon-home')
-  if (icon && icon.parentElement.textContent.includes('/')) {
-    const div = icon.parentElement.parentElement
+  const breadcrumb = icon && icon.parentElement
+  if (breadcrumb && breadcrumb.textContent.includes('/')) {
+    const div = breadcrumb.parentElement
     const h1 = div.querySelector(':scope h1')
     if (h1) {
       const section = document.createElement('div');
-      section.append(buildBlock('breadcrumb-title', [...div.childNodes]))
+      const block = buildBlock('breadcrumb-title', [])
+      block.append(wrapElements('breadcrumb', breadcrumb))
+      block.append(wrapElements('title', h1))
+      block.append(wrapElements('intro', [...div.children]))
+      section.append(block)
       main.prepend(section)
     }
   }

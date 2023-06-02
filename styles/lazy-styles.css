@@ -1,4 +1,8 @@
 /* below the fold CSS goes here */
+.breadcrumb-title-container {
+  background-color: #f2f2f7;
+}
+
 .support main {
   margin: auto;
   max-width: 1200px;
