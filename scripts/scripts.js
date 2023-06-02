@@ -41,20 +41,27 @@ function wrapElements(className, content) {
   return wrapper
 }
 
+function wrapHome(icon) {
+  const link = document.createElement('a')
+  link.href = '/';
+  link.append(icon)
+  return link
+}
+
 function buildBreadcrumbTitle(/** @type {Element} */ main) {
   const icon = main.querySelector('div p span.icon-home')
   const breadcrumb = icon && icon.parentElement
   if (breadcrumb && breadcrumb.textContent.includes('/')) {
+    breadcrumb.prepend(wrapHome(icon))
     const div = breadcrumb.parentElement
     const h1 = div.querySelector(':scope h1')
     if (h1) {
-      const section = document.createElement('div');
       const block = buildBlock('breadcrumb-title', [])
       block.append(wrapElements('breadcrumb', breadcrumb))
       block.append(wrapElements('title', h1))
       block.append(wrapElements('intro', [...div.children]))
-      section.append(block)
-      main.prepend(section)
+      div.append(block)
+      main.prepend(div)
     }
   }
 }

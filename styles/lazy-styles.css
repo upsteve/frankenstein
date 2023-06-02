@@ -1,6 +1,20 @@
 /* below the fold CSS goes here */
 .breadcrumb-title-container {
   background-color: #f2f2f7;
+  background-image: url(/icons/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right 30px;
+}
+
+.breadcrumb a {
+  vertical-align: middle;
+}
+
+.icon-home {
+  height: 16px;
+  width: 16px;
+  padding-right: 6px;
 }
 
 .support main {
@@ -9,10 +23,14 @@
   background-color: #f8f9fa;
 }
 
+.support h2 {
+  margin: 0;
+}
+
 .support .columns > div {
   align-items: stretch;
   gap: 40px;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .support .columns > div > div {
