@@ -25,6 +25,14 @@
   column-count: 2;
 }
 
+.support .columns ul:last-child {
+  column-count: 1;
+}
+
+.support .columns ul:last-child li::marker {
+  display: none;
+}
+
 .support .columns h3 + p {
   color: var(--intro-color);
 }
