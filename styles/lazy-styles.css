@@ -27,10 +27,8 @@
 
 .support .columns ul:last-child {
   column-count: 1;
-}
-
-.support .columns ul:last-child li::marker {
-  display: none;
+  list-style-type: none;
+  padding: 0;
 }
 
 .support .columns h3 + p {
