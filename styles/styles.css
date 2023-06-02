@@ -26,7 +26,11 @@
   --intro-color: #999;
 
   /* fonts */
+  /*
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  OSS font below
+  */
+  --body-font-family: 'Times New Roman', serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
