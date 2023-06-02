@@ -33,6 +33,19 @@ function buildHeroBlock(main) {
   }
 }
 
+function buildBreadcrumbTitle(/** @type {HTMLElement} */ main) {
+  const icon = main.querySelector('div p span.icon-home')
+  if (icon && icon.parentElement.textContent.includes('/')) {
+    const div = icon.parentElement.parentElement
+    const h1 = div.querySelector(':scope h1')
+    if (h1) {
+      const section = document.createElement('div');
+      section.append(buildBlock('breadcrumb-title', [...div.childNodes]))
+      main.prepend(section)
+    }
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -41,6 +54,7 @@ function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
     // SS customisations
+    buildBreadcrumbTitle(main)
     buildImageTextBlock(main)
     window['postForm'] = postForm
   } catch (error) {
