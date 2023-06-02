@@ -17,7 +17,13 @@
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
+  /*
   --text-color: #000;
+  OSS colors below
+  */
+  --text-color: #333;
+  --heading-color: #555;
+  --intro-color: #777;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -28,6 +34,7 @@
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
+    OSS sizes below
  */
   --body-font-size-m: 16px;
   --body-font-size-s: 14px;
@@ -40,6 +47,7 @@
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
+    OSS sizes below
  */
   --heading-font-size-xxl: 40px;
   --heading-font-size-xl: 32px;
@@ -62,6 +70,7 @@
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
+    OSS sizes below
     */
     --heading-font-size-xxl: 48px;
     --heading-font-size-xl: 36px;
@@ -92,6 +101,8 @@ header {
 
 h1, h2, h3,
 h4, h5, h6 {
+  /* OSS color below */
+  color: var(--heading-color);
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;

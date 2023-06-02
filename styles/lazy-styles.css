@@ -1,27 +1,30 @@
 /* below the fold CSS goes here */
 .support {
-    margin: auto;
-    max-width: 1200px;
-    background-color: #f8f9fa;
+  margin: auto;
+  max-width: 1200px;
+  background-color: #f8f9fa;
 }
 
-.columns.support > div {
-    align-items: stretch;
-    gap: 40px;
-    margin-bottom: 40px;
+.columns.support>div {
+  align-items: stretch;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.columns.support > div > div {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-
+.columns.support>div>div {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 50px;
 }
 
 .columns.support h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .columns.support ul {
-    column-count: 2;
+  column-count: 2;
+}
+
+.columns h3+p {
+  color: var(--into-color);
 }
