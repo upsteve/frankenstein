@@ -1,4 +1,10 @@
 /* below the fold CSS goes here */
+.support {
+    margin: auto;
+    max-width: 1200px;
+    background-color: #f8f9fa;
+}
+
 .columns.support > div {
     align-items: stretch;
     gap: 40px;
@@ -6,6 +12,7 @@
 }
 
 .columns.support > div > div {
+    background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 50px;
 
