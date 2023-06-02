@@ -5,26 +5,26 @@
   background-color: #f8f9fa;
 }
 
-.columns.support > div {
+.support .columns > div {
   align-items: stretch;
   gap: 40px;
   margin-bottom: 40px;
 }
 
-.columns.support > div > div {
+.support .columns > div > div {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 50px;
 }
 
-.columns.support h3 {
+.support .columns h3 {
   margin-top: 0;
 }
 
-.columns.support ul {
+.support .columns ul {
   column-count: 2;
 }
 
-.columns h3+p {
+.support .columns h3+p {
   color: var(--intro-color);
 }
