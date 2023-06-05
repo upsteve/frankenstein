@@ -39,6 +39,12 @@
   padding: 50px;
 }
 
+.support .columns > div > div:empty {
+  height: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 .support .columns h3 {
   margin-top: 0;
 }
