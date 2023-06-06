@@ -1,0 +1,22 @@
+main .breadcrumb-title-container {
+  background-color: #f2f2f7;
+  padding: 0;
+}
+
+.breadcrumb-title-wrapper {
+  background-image: url(/icons/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right 30px;
+  padding: 32px 0;
+}
+
+.breadcrumb a {
+  vertical-align: middle;
+}
+
+.icon-home {
+  height: 16px;
+  width: 16px;
+  padding-right: 6px;
+}

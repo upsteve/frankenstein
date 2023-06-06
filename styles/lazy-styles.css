@@ -1,26 +1,7 @@
 /* below the fold CSS goes here */
-.breadcrumb-title-container {
-  background-color: #f2f2f7;
-  background-image: url(/icons/arrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right 30px;
-}
-
-.breadcrumb a {
-  vertical-align: middle;
-}
-
-.icon-home {
-  height: 16px;
-  width: 16px;
-  padding-right: 6px;
-}
-
 .support main {
   margin: auto;
-  max-width: 1200px;
-  background-color: #f8f9fa;
+  background-color: var(--body-color);
 }
 
 .support h2 {

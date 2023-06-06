@@ -1,6 +1,9 @@
 /* header and nav layout */
 header .nav-wrapper {
+  /* OSS Use grey background for header
   background-color: var(--background-color);
+  */
+  background-color: var(--body-color);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -9,8 +12,9 @@ header .nav-wrapper {
 header nav {
   box-sizing: border-box;
   display: grid;
+  /* OSS Move hamburger from start to end */
   grid-template:
-    'hamburger brand tools' var(--nav-height)
+    'brand tools hamburger' var(--nav-height)
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 2em;
@@ -39,6 +43,7 @@ header nav[aria-expanded="true"] {
 @media (min-width: 900px) {
   header nav {
     display: flex;
+    flex-wrap: wrap; /* OSS Keep title on first line */
     justify-content: space-between;
   }
 
@@ -141,8 +146,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
+  /* OSS Force title full width and larger font
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
+  */
   font-weight: 700;
   line-height: 1;
 }
@@ -275,10 +282,14 @@ header nav .nav-tools {
 }
 
 
-/* MY CUSTOMISATIONS */
+/* OSS MY CUSTOMISATIONS */
+.nav-wrapper {
+  padding: 30px 0 18px;
+}
+
 .nav-brand {
-  direction: rtl;
-  text-shadow: 0 0 3px aqua;
-  text-transform: uppercase;
-  text-decoration: underline dashed purple;
+  color: #000484;
+  font-size: var(--heading-font-size-m);
+  padding-bottom: 13px;
+  width: 100%;
 }
