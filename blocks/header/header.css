@@ -264,8 +264,10 @@ header nav .nav-sections ul > li > ul > li {
 
   /* OSS */
   header nav .nav-sections > ul > li > ul > li {
+    background-color: #000484;
     color: #fff;
     padding: 1em;
+    width: 45%;
   }
 
   /* OSS */
@@ -287,7 +289,7 @@ header nav .nav-sections ul > li > ul > li {
     /* OSS
     padding: 1em;
     background-color: var(--highlight-background-color);*/
-    background-color: #000484;
+    background-color: #f2f2f7;
 
     white-space: initial;
   }
@@ -296,15 +298,16 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections > ul > li > ul > li > ul {
     background-color: #f2f2f7;
     display: none;
-    gap: 0;
+    gap: 12px 20px;
+    row-gap: 12px;
   }
 
   /* OSS */
   header nav .nav-sections > ul > li > ul > li[aria-expanded="true"] > ul {
     position: absolute;
-    top: 40px;
+    top: 60px;
     left: 50%;
-    height: calc(100% - 40px);
+    height: calc(100% - 60px);
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -314,15 +317,14 @@ header nav .nav-sections ul > li > ul > li {
   /* OSS */
   header nav .nav-sections > ul > li > ul > li > ul > li {
     background-color: #f8f9fa;
-    margin: 12px 5%;
     padding: 16px;
-    width: 40%;
+    width: 45%;
   }
 
   header nav .nav-sections > ul > li > ul > li > ul::before {
     content: "Sub Services";
     position: absolute;
-    top: -20px;
+    top: -40px;
   }
 
   /* OSS */

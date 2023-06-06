@@ -51,7 +51,7 @@ function navDropToggle(focused, expand) {
   const siblings = [...focused.parentElement.children]
   siblings.forEach(section => section.setAttribute('aria-expanded', false))
   focused.setAttribute('aria-expanded', expand ? 'true' : 'false');
-  focused.children[0].setAttribute('aria-expanded', 'true');
+  focused.querySelector('li').setAttribute('aria-expanded', 'true');
   if (!expand) siblings[0].setAttribute('aria-expanded', 'true');
 }
 
