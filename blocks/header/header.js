@@ -24,11 +24,11 @@ function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
   if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
+    /* OSS use helper? */
     const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
-    // eslint-disable-next-line no-use-before-define
     toggleAllNavSections(focused.closest('.nav-sections'));
     focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
-  }
+    }
 }
 
 function focusNavSection() {
@@ -42,8 +42,29 @@ function focusNavSection() {
  */
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
+    section.setAttribute('aria-expanded', expanded.toString());
   });
+}
+
+/* OSS toggle helper */
+function navDropToggle(focused, expand) {
+  const siblings = [...focused.parentElement.children]
+  siblings.forEach(section => section.setAttribute('aria-expanded', false))
+  focused.setAttribute('aria-expanded', expand ? 'true' : 'false');
+  focused.children[0].setAttribute('aria-expanded', 'true');
+  if (!expand) siblings[0].setAttribute('aria-expanded', 'true');
+}
+
+/* OSS enter */
+function navDropEnter(e) {
+  navDropToggle(e.currentTarget, true)
+  //console.log('enter', e.currentTarget.childNodes[0].textContent)
+}
+
+/* OSS leave */
+function navDropLeave(e) {
+  navDropToggle(e.currentTarget, false)
+  //console.log('leave', e.currentTarget.childNodes[0].textContent)
 }
 
 /**
@@ -57,7 +78,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+  toggleAllNavSections(navSections, expanded || isDesktop.matches ? false : true);
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
@@ -67,6 +88,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
         drop.setAttribute('role', 'button');
         drop.setAttribute('tabindex', 0);
         drop.addEventListener('focus', focusNavSection);
+        /* OSS hover */
+        drop.addEventListener('mouseenter', navDropEnter);
+        drop.addEventListener('mouseleave', navDropLeave);
       }
     });
   } else {
@@ -74,6 +98,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
       drop.removeAttribute('role');
       drop.removeAttribute('tabindex');
       drop.removeEventListener('focus', focusNavSection);
+      /* OSS hover */
+      drop.removeEventListener('mouseenter', navDropEnter);
+      drop.removeEventListener('mouseleave', navDropLeave);
     });
   }
   // enable menu collapse on escape keypress
@@ -112,7 +139,16 @@ export default async function decorate(block) {
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        // if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        // OSS
+        if (navSection.querySelector('ul')) {
+          navSection.classList.add('nav-drop');
+          navSection.querySelectorAll(':scope > ul > li').forEach((subSection) => {
+            if (subSection.querySelector('ul')) {
+              subSection.classList.add('nav-drop');
+            }
+          })
+        }
         navSection.addEventListener('click', () => {
           if (isDesktop.matches) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';

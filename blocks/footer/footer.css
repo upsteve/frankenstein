@@ -25,6 +25,10 @@ footer a:any-link {
   color: unset;
 }
 
+footer a:hover {
+  color: var(--link-color);
+}
+
 @media (min-width: 600px) {
   footer ul {
     column-count: 8;

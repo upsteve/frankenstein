@@ -194,6 +194,11 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 @media (min-width: 900px) {
+  #nav {
+    /* OSS */
+    position: relative;
+  }
+
   header nav .nav-sections {
     display: block;
     visibility: visible;
@@ -205,11 +210,14 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .nav-drop {
+    /* OSS
     position: relative;
+    */
     padding-right: 16px;
     cursor: pointer;
   }
 
+  /* OSS
   header nav .nav-sections .nav-drop::after {
     content: '';
     display: inline-block;
@@ -229,17 +237,23 @@ header nav .nav-sections ul > li > ul > li {
     bottom: .5em;
     transform: rotate(315deg);
   }
+  */
 
   header nav .nav-sections ul {
     display: flex;
     gap: 2em;
     margin: 0;
+    /* OSS Use a large font
     font-size: var(--body-font-size-xs);
+    */
+    font-size: var(--body-font-size-s);
   }
 
   header nav .nav-sections > ul > li {
     flex: 0 1 auto;
+    /* OSS
     position: relative;
+    */
     font-weight: 500;
   }
 
@@ -248,18 +262,87 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
   }
 
+  /* OSS */
+  header nav .nav-sections > ul > li > ul > li {
+    color: #fff;
+    padding: 1em;
+  }
+
+  /* OSS */
+  header nav .nav-sections > ul > li > ul > li[aria-expanded="true"] {
+    background-color: #f2f2f7;
+    color: var(--text-color);
+  }
+
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
     display: block;
     position: absolute;
+    /* OSS
     left: -1em;
-    width: 200px;
+    width: 200px; */
+    max-width: 1200px;
+    width: 100%;
+    left: 32px;
     margin-top: 12px;
+    /* OSS
     padding: 1em;
-    background-color: var(--highlight-background-color);
+    background-color: var(--highlight-background-color);*/
+    background-color: #000484;
+
     white-space: initial;
   }
 
+  /* OSS */
+  header nav .nav-sections > ul > li > ul > li > ul {
+    background-color: #f2f2f7;
+    display: none;
+    gap: 0;
+  }
+
+  /* OSS */
+  header nav .nav-sections > ul > li > ul > li[aria-expanded="true"] > ul {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    height: calc(100% - 40px);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  /* OSS */
+  header nav .nav-sections > ul > li > ul > li > ul > li {
+    background-color: #f8f9fa;
+    margin: 12px 5%;
+    padding: 16px;
+    width: 40%;
+  }
+
+  header nav .nav-sections > ul > li > ul > li > ul::before {
+    content: "Sub Services";
+    position: absolute;
+    top: -20px;
+  }
+
+  /* OSS */
+  header nav .nav-sections > ul > li > ul::before,
+  header nav .nav-sections > ul > li > ul::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  /* OSS */
+  header nav .nav-sections > ul > li > ul::after {
+    background-color: #f2f2f7;
+    right: -50%;
+  }
+
   header nav .nav-sections > ul > li > ul::before {
+    /* OSS
     content: '';
     position: absolute;
     top: -8px;
@@ -269,11 +352,16 @@ header nav .nav-sections ul > li > ul > li {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--highlight-background-color);
+    */
+    background-color: #000484;
+    left: -50%;
   }
 
+  /* OSS
   header nav .nav-sections > ul > li > ul > li {
     padding: 8px 0;
   }
+  */
 }
 
 /* tools */
@@ -290,6 +378,19 @@ header nav .nav-tools {
 .nav-brand {
   color: #000484;
   font-size: var(--heading-font-size-m);
-  padding-bottom: 13px;
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  header nav .nav-sections > ul {
+    gap: 0;
+  }
+
+  header nav .nav-sections > ul > li {
+    padding: 18px 20px;
+  }
+}
+
+header nav a:hover {
+  color: var(--link-color);
 }
