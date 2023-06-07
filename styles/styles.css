@@ -64,8 +64,9 @@
   --heading-font-size-s: 18px;
   --heading-font-size-xs: 16px;
 
-  /* nav height */
-  --nav-height: 64px;
+  /* OSS
+  nav height */
+  --nav-height: 120px;
 
 }
 
@@ -174,9 +175,13 @@ a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
-  text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  /* OSS
+  text-decoration: none;
+  padding: 5px 30px;*/
+  padding: 10px 20px;
+  line-height: 19px;
+
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -187,7 +192,7 @@ a.button:any-link, button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 42px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
@@ -202,8 +207,13 @@ button:disabled, button:disabled:hover {
 
 a.button.secondary, button.secondary {
   background-color: unset;
+  /* OSS
   border: 2px solid currentcolor;
-  color: var(--text-color)
+  color: var(--text-color)*/
+  border: 1px solid var(--link-color);
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: normal;
 }
 
 main input {

@@ -141,7 +141,8 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadHeader(doc.querySelector('header'));
+  /* OSS Allow buttons in the header */
+  loadHeader(doc.querySelector('header')).then(() => decorateButtons(doc.querySelector('header')));
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
