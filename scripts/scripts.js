@@ -41,9 +41,9 @@ function wrapElements(className, content) {
   return wrapper
 }
 
-function wrapHome(icon) {
+function wrapHome(icon, href) {
   const link = document.createElement('a')
-  link.href = '/';
+  link.href = href;
   link.append(icon)
   return link
 }
@@ -52,7 +52,11 @@ function buildBreadcrumbTitle(/** @type {Element} */ main) {
   const icon = main.querySelector('div p span.icon-home')
   const breadcrumb = icon && icon.parentElement
   if (breadcrumb && breadcrumb.textContent.includes('/')) {
-    breadcrumb.prepend(wrapHome(icon))
+    //const slices = breadcrumb.textContent.split('/')
+    //const home = slices.shift()
+    //const page = slices.pop()
+    breadcrumb.prepend(wrapHome(icon, '/'))
+    //slices.map()
     const div = breadcrumb.parentElement
     const h1 = div.querySelector(':scope h1')
     if (h1) {
@@ -163,6 +167,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  // console.log(document.body.innerHTML)
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

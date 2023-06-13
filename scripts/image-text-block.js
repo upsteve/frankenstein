@@ -29,6 +29,6 @@ function isAlternatingImageText(/** @type {Element} */ main, /** @type {Element}
 }
 
 export default function buildImageTextBlock(/** @type {Element} */main) {
-    console.log(main.innerHTML)
+    // console.log(main.innerHTML)
     main.querySelectorAll(':scope > div').forEach(section => isAlternatingImageText(main, section))
 }
